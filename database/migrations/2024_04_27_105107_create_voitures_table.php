@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer("année")->nullable();
             $table->integer("prix_location_jour")->nullable();
             $table->string("color",30)->nullable();
+            $table->integer("stock")->nullable();
             $table->foreign("marque_id")->references('id')->on("marques")->onDelete("cascade");
             $table->foreign("categorie_id")->references('id')->on("categories")->onDelete("cascade");
             $table->timestamps();

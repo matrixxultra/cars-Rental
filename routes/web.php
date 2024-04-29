@@ -37,11 +37,32 @@ Route::post("/deconnect",[ClientController::class , "deconnect"]);
 //Hadchi Dial Admins
 
 Route::get("/admin",[AdminController::class,"index"]);
+
 Route::get("/admin/voitures",[AdminController::class , "all_voitures"]);
 Route::get("/admin/ajouter_voiture",[AdminController::class , "ajouter_voiture"]);
+Route::post('/admin/store_voiture',[AdminController::class , "store_voiture"]);
+Route::get("/admin/edit_voiture/{id}", [AdminController::class , "edit_voiture"]); // hadi dialk
+Route::put("/admin/update_voiture/{id}", [AdminController::class , "update_voiture"]); // hadi dialk
+Route::delete("/admin/delete_voiture", [AdminController::class , "delete_voiture"]); // hadi dialk
+
+Route::get("/admin/ajouter_images/{id}",[AdminController::class , "ajouter_images"]);
+Route::post("/admin/store_images/{id}",[AdminController::class ,"store_images"]);
+Route::delete("/admin/delete_images/{id}",[AdminController::class,"delete_images"]);
+
 
 Route::get("/admin/marques",[AdminController::class , "all_marques"]);
 Route::get("/admin/ajouter_marque",[AdminController::class , "ajouter_marque"]);
+Route::post("/admin/store_marque",[AdminController::class , "store_marque"]);
+Route::get("/admin/edit_marque/{id}",[AdminController::class , "edit_marque"]);
+Route::put("/admin/update_marque/{id}",[AdminController::class , "update_marque"]);
+Route::delete("/admin/delete_marque/{id}" , [AdminController::class , "delete_marque"]); // hadi dialk
+
+
+// KHAY HAMZA HNA ATDIR KHDMTK DAKCHI SAHL SHLT 3LIK L 9ADIYA
+// SUPPRIMMER MARQUE
+// SUPPRIMMER VOITURE
+//MODIFIER VOITURE
+// LES ROUTE W L VUES RA DEJA WAJDIN ST3MLHOM SF BON COURAGE :)
 
 
 

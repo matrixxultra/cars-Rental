@@ -10,6 +10,7 @@ class Picture extends Model
 {
     use HasFactory;
     protected $fillable= [
+        "voiture_id",
         "pics"
     ];
     public function voiture(){
