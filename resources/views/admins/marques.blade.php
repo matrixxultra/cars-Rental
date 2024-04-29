@@ -1,6 +1,11 @@
 @extends('admins.app')
 @section('main')
 <center class="mt-5"><h1>Gérer Les Marques</h1></center>
+@if (session()->has("success"))
+<div class="alert alert-success container" role="alert">
+    {{Session::get("success")}} Autentifier S'il Veut Plait !
+</div>
+@endif
 <div class="container"><a class="btn btn-primary" href="/admin/ajouter_marque">Ajouter Marque</a></div>
 <div class="container">
     @if (session()->has("success"))

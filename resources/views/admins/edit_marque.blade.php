@@ -1,6 +1,11 @@
 @extends('admins.app')
 @section('main')
 <center><h1 class="mt-5">Modifier la Marque <span class="text-primary">{{$marque->name}}</span> </h1></center>
+@if (session()->has("success"))
+<div class="alert alert-success container" role="alert">
+    {{Session::get("success")}} Autentifier S'il Veut Plait !
+</div>
+@endif
 <form action="/admin/update_marque/{{$marque->id}}" class="container mt-5" method="post" enctype="multipart/form-data">
     @csrf
     @method("PUT")

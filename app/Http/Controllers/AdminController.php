@@ -7,6 +7,7 @@ use App\Models\Marque;
 use App\Models\Picture;
 use App\Models\Voiture;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class AdminController extends Controller
 {
@@ -80,6 +81,9 @@ class AdminController extends Controller
     }
     public function delete_images(String $id){
       $image = Picture::find($id);
+      if (File::exists($image->pics)) {
+          File::delete($image->pics);
+      }
       $image->delete();
       return redirect()->back()->with("success","l'image est Supprimer avec Succés");
     }
@@ -114,9 +118,11 @@ class AdminController extends Controller
         $marque->name = $req->input("name");
 
         if ($req->hasFile($req->file($req->image))) {
+            File::delete($marque->image);
             $fileName = time().$req->file("image")->getClientOriginalName();
             $path = $req->file("image")->storeAs("marques",$fileName,"public");
             $marque->image = 'storage/'.$path ;
+            
          }
         $marque->save();
         return redirect()->back()->with("success","La marque est Modifié avec Succés");

@@ -17,11 +17,11 @@ class DatabaseSeeder extends Seeder
         DB::table('marques')->insert([
             [
                 "name"=>"Mercedes Benz",
-                "image"=>"SOON"
+                "image"=>asset("storage/marques/benz.png")
             ],
             [
                 "name"=>"Lamborgini",
-                "image"=>"SOON"
+                "image"=>asset("storage/marques/lamborghini.png")
             ]
             ]);
         DB::table('categories')->insert([
@@ -40,6 +40,7 @@ class DatabaseSeeder extends Seeder
             "marque_id"=>1,
             "modele"=>'MAYBACH',
             "année"=>2025,
+            "stock"=>15,
             "color"=>"black",
 
         ]);

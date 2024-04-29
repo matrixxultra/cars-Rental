@@ -1,6 +1,11 @@
 @extends('admins.app')
 @section('main')
 <center ><h1 class="mt-5">Ajouter Marque</h1></center>
+@if (session()->has("success"))
+<div class="alert alert-success container" role="alert">
+    {{Session::get("success")}}
+</div>
+@endif
 <form action="/admin/store_marque" class="container mt-5" method="post" enctype="multipart/form-data">
 @csrf
 <div class="input-group input-group-lg">

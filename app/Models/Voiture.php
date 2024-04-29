@@ -16,7 +16,10 @@ class Voiture extends Model
         "marque_id",
         "categorie_id",
         "color",
+        "année",
+        "promotion",
         "modele",
+        "stock",
         "prix_location_jour",
     ];
     public function marque(){

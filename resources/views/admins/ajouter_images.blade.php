@@ -1,6 +1,11 @@
 @extends('admins.app')
 @section('main')
 <center><h3 class="mt-5">Gérer les Images de Voiture  <span class="text-primary">{{$voiture->marque->name}} {{$voiture->modele}}</span> </h3></center>
+@if (session()->has("success"))
+<div class="alert alert-success container" role="alert">
+    {{Session::get("success")}} 
+</div>
+@endif
 <form action="/admin/store_images/{{$voiture->id}}" method="post" class="container mt-5" enctype="multipart/form-data">
     @csrf
     <div>

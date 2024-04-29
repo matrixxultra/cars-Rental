@@ -1,6 +1,11 @@
 @extends('admins.app')
 @section('main')
 <center class="mt-5"><h1>Gérer Les Voitures</h1></center>
+@if (session()->has("success"))
+<div class="alert alert-success container" role="alert">
+    {{Session::get("success")}} 
+</div>
+@endif
 <div class="container"><a class="btn btn-primary" href="/admin/ajouter_voiture">Ajouter Voiture</a></div>
 <table class="table table-secondary container mt-5">
     <thead>

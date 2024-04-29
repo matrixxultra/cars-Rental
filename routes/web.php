@@ -23,6 +23,11 @@ Route::get("/cars",[ClientController::class,"cars"]);
 Route::get("/showCar/{id}",[ClientController::class,"showCar"]);
 Route::get("/contact",[ClientController::class,"contact"]);
 
+//Location 
+
+Route::get('/louer/{id}',[ClientController::class,"louer"]);
+Route::post('/uplouer/{id}',[ClientController::class , "store_location"]);
+
 //Authentification
 Route::get("/login",[ClientController::class,"login"]);
 Route::post("/verifier",[ClientController::class , "verifier"])->middleware("check");

@@ -10,7 +10,7 @@
 					<a class="btn btn-lg btn-primary me-2 mb-3 mb-sm-0" href="">Get Started</a> <a class="btn btn-lg btn-outline-primary" href="">Learn More</a>
 				</div>
 			</div>
-			<div class="col-lg-6"><img alt="Image Description" class="img-fluid" src="{{asset("pictures/mrc.jpg")}}"></div>
+			<div class="col-lg-6"><img alt="Image Description" class="img-fluid" src="{{asset("pictures/landingpage2.png")}}"></div>
 		</div>
 		<div class="row mt-5">
 			<div class="col-sm-4 mb-3 mb-sm-0">
