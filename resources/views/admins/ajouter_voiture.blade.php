@@ -3,9 +3,22 @@
 <center><h1 class="mt-5">Ajouter Une Voiture</h1></center>
 @if (session()->has("success"))
 <div class="alert alert-success container" role="alert">
-    {{Session::get("success")}} 
+    {{Session::get("success")}}
 </div>
 @endif
+<div class="container">
+    @if ($errors->any())
+
+    @foreach ($errors->all() as $e)
+
+        <div class="alert alert-danger container" role="alert">
+            {{$e}}
+        </div>
+    @endforeach
+
+
+    @endif
+</div>
 <form action="/admin/store_voiture" method="post"  class="container mt-5">
     @csrf
 <label for="" class="form-label">Marque</label>
@@ -46,7 +59,7 @@
     <span class="input-group-text" id="inputGroup-sizing-lg">Prix Location Par Jour</span>
     <input type="number" class="form-control" name="prix_location_jour" placeholder="Ex 100 , 500 , 3000" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
   </div> <br>
- 
+
    <button class="btn btn-primary">Ajouter Voiture</button>
 
 </form>

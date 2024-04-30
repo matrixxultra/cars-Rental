@@ -1,6 +1,19 @@
 @extends('master')
 @section('main')
 <center><h1>Créer Un Compte</h1></center> <br>
+<div class="container">
+    @if ($errors->any())
+
+    @foreach ($errors->all() as $e)
+
+        <div class="alert alert-danger container" role="alert">
+            {{$e}}
+        </div>
+    @endforeach
+
+
+    @endif
+</div>
 <form action="/store" class="container " method="POST">
     @csrf
     <div class="input-group mb-3">

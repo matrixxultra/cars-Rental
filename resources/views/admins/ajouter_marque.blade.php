@@ -6,6 +6,19 @@
     {{Session::get("success")}}
 </div>
 @endif
+<div class="container">
+    @if ($errors->any())
+
+    @foreach ($errors->all() as $e)
+
+        <div class="alert alert-danger container" role="alert">
+            {{$e}}
+        </div>
+    @endforeach
+
+
+    @endif
+</div>
 <form action="/admin/store_marque" class="container mt-5" method="post" enctype="multipart/form-data">
 @csrf
 <div class="input-group input-group-lg">

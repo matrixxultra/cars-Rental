@@ -53,6 +53,8 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $middlewareAliases = [
+        "verrole"=>\App\Http\Middleware\VerifierRole::class,
+        "verauth"=>\App\Http\Middleware\VeifierAuth::class,
         "check"=>\App\Http\Middleware\Check::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,

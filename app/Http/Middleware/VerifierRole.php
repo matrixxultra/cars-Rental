@@ -15,6 +15,10 @@ class VerifierRole
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if (auth()->guard("admin")->check()) {
+            return $next($request);
+
+        }
+        return response("Vous n'etes Pas Autorisé De faire Cette Route");
     }
 }

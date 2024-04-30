@@ -19,7 +19,13 @@
                     <p>Color : {{$promotion->color}}</p>
                     <p>Stock : {{$promotion->stock}}</p>
                     <p>Prix Location Par Jour : {{$promotion->prix_location_jour}} MAD</p>
+                    @if ($promotion->stock == 0)
+                    <span class="badge rounded-pill text-bg-danger">Repture de Stock</span>
+
+                    @else
                     <a class="btn btn-lg btn-info" href="/louer/{{$promotion->id}}">Louer Maintenant</a>
+
+                    @endif
 				</div>
 			</div>
 		</div>
@@ -42,13 +48,16 @@
 					<div class="card-body p-0 text-center mt-4">
 						<h5><a class="text-dark text-decoration-none" href="/showCar/{{$v->id}}">{{$v->marque->name}} {{$v->modele}}</a></h5>
 						<p class="mt-3">{{$v->prix_location_jour}} MAD / Jour</p>
-                        <p></p>
+                        @if ($v->stock == 0)
+                             <span class="badge rounded-pill text-bg-danger">Repture de Stock</span>
+                       @endif
+                           <p></p>
 					</div>
 				</div>
 			</div>
 
             @endforeach
-			
+
 		</div>
 	</div>
 </section>

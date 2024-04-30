@@ -1,25 +1,9 @@
 <footer class="py-4">
 	<div class="container">
 		<div class="row align-items-center py-4">
-			<div class="col-12 col-lg-3 text-center text-lg-start"><img alt="Free Frontend Logo" class="img-fluid mb-3" height="" src="https://freefrontend.dev/wp-content/uploads/free-frontend-logo.png" width="300"></div>
+			<div class="col-12 col-lg-3 text-center text-lg-start"><h1>Mon<span class="text-primary">Voiture</span></h1></div>
 			<div class="col-12 col-lg-6 navbar-expand text-center">
-				<ul class="list-unstyled d-block d-lg-flex justify-content-center mb-3 mb-lg-0">
-					<li class="nav-item">
-						<a class="text-dark text-decoration-none me-lg-3" href="">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="text-dark text-decoration-none me-lg-3" href="">About</a>
-					</li>
-					<li class="nav-item">
-						<a class="text-dark text-decoration-none me-lg-3" href="">Shop</a>
-					</li>
-					<li class="nav-item">
-						<a class="text-dark text-decoration-none me-lg-3" href="">Gallery</a>
-					</li>
-					<li class="nav-item">
-						<a class="text-dark text-decoration-none" href="">Contact</a>
-					</li>
-				</ul>
+
 			</div>
 			<div class="col-12 col-lg-3 text-center text-lg-end">
 				<a class="me-2" href=""><svg class="bi bi-pinterest text-primary" fill="currentColor" height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +14,7 @@
 		</div>
 		<div class="row pb-3">
 			<div class="col-12 text-center small text-muted">
-				© 2023 FreeFrontend.dev. All rights reserved. <a class="d-block d-lg-inline text-muted mx-1" href="">Privacy Policy</a> <a class="d-block d-lg-inline text-muted mx-1" href="">Terms of Service</a>
+				© 2024 MyCar All rights reserved. <a class="d-block d-lg-inline text-muted mx-1" href="">Privacy Policy</a> <a class="d-block d-lg-inline text-muted mx-1" href="">Terms of Service</a>
 			</div>
 		</div>
 	</div>

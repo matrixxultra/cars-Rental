@@ -2,17 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Categorie;
+use App\Models\User;
 use App\Models\Marque;
 use App\Models\Picture;
 use App\Models\Voiture;
+use App\Models\Categorie;
+use App\Notifications\AnnonceNotification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Notification;
 
 class AdminController extends Controller
 {
     public function index(){
-        return view("admins.index");
+        $data = DB::table("user_voiture")->join("users","users.id","=","user_voiture.user_id")
+        ->join("voitures","user_voiture.voiture_id","=","voitures.id")
+        ->get();
+        //dd($data);
+        return view("admins.index",compact("data"));
     }
     public function all_voitures(){
         $voitures = Voiture::paginate(3);
@@ -42,8 +50,8 @@ class AdminController extends Controller
         return redirect("/admin/voitures")->with("success","La Voiture Est Ajouté Avec Succé");
     }
     public function edit_voiture(){
-         
-        /// dialk 
+
+        /// dialk
     }
 
     public function update_voiture(){
@@ -61,7 +69,7 @@ class AdminController extends Controller
     public function store_images(Request $req){
      $voiture = Voiture::findOrFail($req->route("id"));
      $req->validate([
-        "pics.*"=>"required|image|mimes:png,jpg"
+        "pics"=>"required|image|mimes:png,jpg"
      ]);
      $data = [
         "voiture_id"=>$voiture->id
@@ -75,7 +83,7 @@ class AdminController extends Controller
          Picture::create($data);
 
      }
-     
+
     return redirect()->back()->with("success","Added With Success");
 
     }
@@ -122,17 +130,22 @@ class AdminController extends Controller
             $fileName = time().$req->file("image")->getClientOriginalName();
             $path = $req->file("image")->storeAs("marques",$fileName,"public");
             $marque->image = 'storage/'.$path ;
-            
+
          }
         $marque->save();
         return redirect()->back()->with("success","La marque est Modifié avec Succés");
     }
-    
-    
-    public function annoncer(){
 
+
+    public function annoncer(){
+         return view("admins.annonce");
     }
     public function envoyer(Request $req){
-
+        $req->validate([
+            "contenu"=>"required"
+        ]);
+        $users = User::all();
+        Notification::send($users,new AnnonceNotification($req->contenu));
+        return redirect()->back()->with("success","L'annonce est Envoyé avec Succés");
     }
 }

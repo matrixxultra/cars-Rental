@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar bg-body-tertiary">
         <div class="container">
-          <a class="navbar-brand fw-bold">Espace <span class="text-primary">Administrateur</span> </a>
+          <a class="navbar-brand fw-bold" href="/admin">Espace <span class="text-primary">Administrateur</span> </a>
           <form class="d-flex">
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Afficher Le Menu</button>
         </form>
@@ -31,6 +31,8 @@
             <li class="list-style-none"><a href="/admin/voitures" class="text-decoration-none">Afficher les Voiture</a></li>
             <li class="list-style-none"><a href="/admin/marques" class="text-decoration-none">Afficher les Marque</a></li>
             <li class="list-style-none"><a href="/admin/annonce" class="text-decoration-none">Annoncer Quelque Chose</a></li>
+            <li class="list-style-none"> <form action="/deconnect" method="post"> @csrf<button class=" btn btn-danger">Log Out</button></form></li>
+
         </ul>
 
 

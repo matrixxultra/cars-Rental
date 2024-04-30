@@ -15,6 +15,10 @@ class VeifierAuth
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        if(auth()->guard("web")->check()){
+            return $next($request);
+
+        }
+        return redirect("/login")->with("success","Authentifier Pour Continue");
     }
 }

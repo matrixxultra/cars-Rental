@@ -16,9 +16,10 @@ class PaimentCar extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public $data;
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
     /**
@@ -27,7 +28,7 @@ class PaimentCar extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Paiment Car',
+            subject: 'Votre Location Chez MyCar',
         );
     }
 
@@ -37,7 +38,8 @@ class PaimentCar extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'clients.paiment',
+            with: ["data"=>$this->data]
         );
     }
 

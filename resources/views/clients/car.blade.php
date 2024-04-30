@@ -21,7 +21,14 @@
                     <p>Stock : {{$voiture->stock}}</p>
                     <p>Prix Location Par Jour : {{$voiture->prix_location_jour}} MAD</p>
 
-					<p>Trés Bon Qualité</p><a class="btn btn-lg btn-info" href="/louer/{{$voiture->id}}">Louer</a>
+					<p>Trés Bon Qualité</p>
+                    @if ($voiture->stock == 0)
+                    <span class="badge rounded-pill text-bg-danger">Repture de Stock</span>
+
+                    @else
+                    <a class="btn btn-lg btn-info" href="/louer/{{$voiture->id}}">Louer</a>
+
+                    @endif
 				</div>
 			</div>
 		</div>
@@ -31,8 +38,8 @@
 				<div class="mb-3 mb-lg-0"><img alt="" class="img-fluid" src="{{asset($p->pics)}}"></div>
 			</div>
             @endforeach
-		
-			
+
+
 		</div>
 	</div>
 </section>

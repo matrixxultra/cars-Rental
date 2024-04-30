@@ -78,7 +78,13 @@ class ClientController extends Controller
             "date_fin"=>$req->date_fin,
             "prix_total"=>$date2->diffInDays($date1) * $voiture->prix_location_jour
         ]);
-        //Mail::to($user->email)->send(new PaimentCar($user->voitures->latest()));
+        Mail::to($user->email)->send(new PaimentCar([
+            "voiture_marque"=> $voiture->marque->name ,
+            "voiture_model"=>$voiture->modele,
+            "date_debut"=>$req->date_debut,
+            "date_fin"=>$req->date_fin,
+            "prix_total"=>$date2->diffInDays($date1) * $voiture->prix_location_jour
+    ]));
         return redirect()->back();
 
 

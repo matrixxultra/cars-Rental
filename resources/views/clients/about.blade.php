@@ -4,12 +4,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-5">
-				<span class="text-muted">Our Story</span>
+				<span class="text-muted">Notre Histoire</span>
 				<h2 class="display-5 fw-bold">About Us</h2>
 			</div>
 			<div class="col-md-6 offset-md-1">
-				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-				<p class="lead">Ullamco laboris nisi ut a Lorem ipsum dolor sit amet,consectetur adipiscing eli ncididunt ullamco laboris nisi ut a Lorem ipsum dolor sit amet,consectetur adipiscing el.</p>
+				<p class="lead">MonVoiture Group, loue des voitures depuis 2000 et il est devenu une des sociétés leader de location voiture Maroc. MonVoiture dispose des agences de location voiture à Marrakech, Agadir, Tanger, Casablanca, Fès,....</p>
+				<p class="lead"> Où que vous soyez, nous ne sommes jamais loin. Rester Positive Avec Nous
+                </p>
 			</div>
 		</div>
 	</div>

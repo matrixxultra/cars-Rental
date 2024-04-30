@@ -3,9 +3,22 @@
 <center><h1 class="mt-5">Modifier la Marque <span class="text-primary">{{$marque->name}}</span> </h1></center>
 @if (session()->has("success"))
 <div class="alert alert-success container" role="alert">
-    {{Session::get("success")}} Autentifier S'il Veut Plait !
+    {{Session::get("success")}}
 </div>
 @endif
+<div class="container">
+    @if ($errors->any())
+
+    @foreach ($errors->all() as $e)
+
+        <div class="alert alert-danger container" role="alert">
+            {{$e}}
+        </div>
+    @endforeach
+
+
+    @endif
+</div>
 <form action="/admin/update_marque/{{$marque->id}}" class="container mt-5" method="post" enctype="multipart/form-data">
     @csrf
     @method("PUT")

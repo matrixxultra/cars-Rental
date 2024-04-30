@@ -4,10 +4,10 @@
 			<div class="col-lg-6 mb-4 mb-lg-0">
 				<div class="pe-lg-3">
 					<h1 class="display-3 fw-bold mb-4">Trouvez votre conduite parfaite avec  <span class="text-primary">Nous</span></h1>
-					<p class="lead mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feugiat erat quis pulvinar semper.</p>
+					<p class="lead mb-4">Où que vous soyez, nous ne sommes jamais loin</p>
 				</div>
 				<div class="d-grid d-sm-flex">
-					<a class="btn btn-lg btn-primary me-2 mb-3 mb-sm-0" href="">Get Started</a> <a class="btn btn-lg btn-outline-primary" href="">Learn More</a>
+					<a class="btn btn-lg btn-primary me-2 mb-3 mb-sm-0" href="/cars">Get Started</a> <a class="btn btn-lg btn-outline-primary" href="/about">Learn More</a>
 				</div>
 			</div>
 			<div class="col-lg-6"><img alt="Image Description" class="img-fluid" src="{{asset("pictures/landingpage2.png")}}"></div>
