@@ -49,16 +49,49 @@ class AdminController extends Controller
 
         return redirect("/admin/voitures")->with("success","La Voiture Est Ajouté Avec Succé");
     }
-    public function edit_voiture(){
+    public function edit_voiture($id){
+         /// dialk
+        $voiture = Voiture::find($id);
 
-        /// dialk
+        $marques = Marque::all();
+
+    $categories = Categorie::all();
+
+    return view('admins.edit_voiture', compact('voiture', 'marques', 'categories'));
+
+       
     }
 
-    public function update_voiture(){
-             // dialk
+    public function update_voiture(Request $request){    
+        $voiture = Voiture::find($request->id ); 
+        // dialk
+     $request->validate([
+         'marque_id' => 'required',
+         'categorie_id' => 'required',
+         'modele' => 'required',
+         'color' => 'required',
+         'année' => 'required|numeric',
+         'stock' => 'required|numeric',
+         'prix_location_jour' => 'required|numeric',
+     ]);
+            
+     $voiture->marque_id = $request->marque_id;
+     $voiture->categorie_id = $request->categorie_id;
+     $voiture->modele = $request->modele;
+     $voiture->color = $request->color;
+     $voiture->année = $request->année;
+     $voiture->stock = $request->stock;
+     $voiture->prix_location_jour = $request->prix_location_jour;
+     $voiture->save();
+         
+     return redirect("/admin/voitures")->with("success","La Voiture Est Modifié Avec Succé");           
+    
     }
     public function delete_voiture(Request $req){
              // dialk
+             $voiture = Voiture::find($req->route("id"));
+             $voiture->delete();
+             return redirect("/admin/voitures")->with("success","La Voiture Est Supprimé Avec Succé");
     }
 
      public function ajouter_images(Request $req){
@@ -68,9 +101,9 @@ class AdminController extends Controller
     }
     public function store_images(Request $req){
      $voiture = Voiture::findOrFail($req->route("id"));
-     $req->validate([
-        "pics"=>"required|image|mimes:png,jpg"
-     ]);
+    //  $req->validate([
+    //     "pics"=>"required|image|mimes:png,jpg"
+    //  ]);
      $data = [
         "voiture_id"=>$voiture->id
      ];
@@ -133,9 +166,14 @@ class AdminController extends Controller
 
          }
         $marque->save();
-        return redirect()->back()->with("success","La marque est Modifié avec Succés");
+        return redirect("/admin/marques")->with("success","La marque est Modifié avec Succés");
     }
-
+    public function delete_marque(Request $req){
+        // dialk
+        $marque = Marque::find($req->route("id"));
+        $marque->delete();
+        return redirect("/admin/marques")->with("success","La Marque est Supprimé avec Success");;
+}
 
     public function annoncer(){
          return view("admins.annonce");

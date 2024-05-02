@@ -49,9 +49,9 @@ Route::middleware("verrole")->group(function() {
     Route::get("/admin/voitures",[AdminController::class , "all_voitures"]);
     Route::get("/admin/ajouter_voiture",[AdminController::class , "ajouter_voiture"]);
     Route::post('/admin/store_voiture',[AdminController::class , "store_voiture"]);
-    Route::get("/admin/edit_voiture/{id}", [AdminController::class , "edit_voiture"]); // hadi dialk
-    Route::put("/admin/update_voiture/{id}", [AdminController::class , "update_voiture"]); // hadi dialk
-    Route::delete("/admin/delete_voiture", [AdminController::class , "delete_voiture"]); // hadi dialk
+    Route::get("/admin/edit_voiture/{id}", [AdminController::class , "edit_voiture"]); // hadi dialk(done)
+    Route::put("/admin/update_voiture/{id}", [AdminController::class , "update_voiture"]); // hadi dialk(done)
+    Route::delete("/admin/delete_voiture/{id}", [AdminController::class , "delete_voiture"]); // hadi dialk(done)
 
     Route::get("/admin/ajouter_images/{id}",[AdminController::class , "ajouter_images"]);
     Route::post("/admin/store_images/{id}",[AdminController::class ,"store_images"]);

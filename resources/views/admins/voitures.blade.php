@@ -29,7 +29,7 @@
             <td> <a href="/admin/ajouter_images/{{$v->id}}" class="btn btn-info">Ajouter / Gérer les Images</a> </td>
             <td class="d-flex gap-2">
                 <a href="/admin/edit_voiture/{{$v->id}}" class="btn btn-warning">Modifier</a>
-                <form action="/admins/delete_voiture/{{$v->id}}" method="post">
+                <form action="/admin/delete_voiture/{{$v->id}}" method="post">
                     @csrf
                     @method("delete")
                     <button class="btn btn-danger">Delete</button>

@@ -29,6 +29,6 @@
       <label for="formFileLg" class="form-label fw-bold">Image</label>
       <input class="form-control form-control-lg" name="image"  type="file">
     </div> <br>
-    <button class="btn btn-primary">Ajouter Marque</button>
+    <button class="btn btn-primary">Modifier Marque</button>
     </form>
 @endsection
